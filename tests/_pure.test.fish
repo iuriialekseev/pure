@@ -67,7 +67,13 @@ setup
     set --erase pure_symbol_title_bar_separator
     source (dirname (status filename))/../conf.d/pure.fish
     echo $pure_symbol_title_bar_separator
-) = -
+) = "-"
+
+@test "configure: pure_shorten_window_title_current_directory_length" (
+    set --erase pure_shorten_window_title_current_directory_length
+    source (dirname (status filename))/../conf.d/pure.fish
+    echo $pure_shorten_window_title_current_directory_length
+) = $NONE
 
 @test "configure: pure_color_primary" (
     set --erase pure_color_primary
@@ -128,6 +134,13 @@ setup
     source (dirname (status filename))/../conf.d/pure.fish
     echo $pure_color_current_directory
 ) = pure_color_primary
+
+
+@test "configure: pure_shorten_prompt_current_directory_length" (
+    set --erase pure_shorten_prompt_current_directory_length
+    source (dirname (status filename))/../conf.d/pure.fish
+    echo $pure_shorten_prompt_current_directory_length
+) = $NONE
 
 @test "configure: pure_color_git_unpushed_commits" (
     set --erase pure_color_git_unpushed_commits
